@@ -82,7 +82,7 @@ public class DiscountEventService {
     private void applySpecialDiscount(Day reservationDay) {
         int discountAmount = 0;
         if (isStarOnDay(reservationDay.getDay())) {
-            discountAmount = reservationDay.getDay() * SPECIAL_DISCOUNT_AMOUNT.getValue();
+            discountAmount = SPECIAL_DISCOUNT_AMOUNT.getValue();
 
             totalDiscountAmount.addAmount(discountAmount);
             discountEventHistory.addDiscountEvent(SPECIAL_DISCOUNT_AMOUNT, discountAmount);
@@ -94,7 +94,7 @@ public class DiscountEventService {
     }
 
     private int getDDayDiscountAmount(int day) {
-        return (day - 25) * D_DAY_DISCOUNT_DAILY_DISCOUNT_AMOUNT.getValue()
+        return (day - 1) * D_DAY_DISCOUNT_DAILY_DISCOUNT_AMOUNT.getValue()
                 + D_DAY_DISCOUNT_INIT_DISCOUNT_AMOUNT.getValue();
     }
 
