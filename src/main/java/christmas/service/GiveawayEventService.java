@@ -2,7 +2,9 @@ package christmas.service;
 
 import static christmas.model.event.GiveawayEventConstant.GIVEAWAY_EVENT;
 
+import christmas.model.event.GiveawayEventConstant;
 import christmas.model.event.GiveawayEventHistory;
+import christmas.model.money.Money;
 
 public class GiveawayEventService {
 
@@ -24,6 +26,14 @@ public class GiveawayEventService {
 
     public GiveawayEventHistory getHistory() {
         return history;
+    }
+
+    public Money getGiveawayEventAmount() {
+        int amount = 0;
+        for (GiveawayEventConstant constant: history.getDetails().keySet()) {
+            amount += history.getDetails().get(constant) * constant.getEventMenu().getPrice();
+        }
+        return Money.of(amount);
     }
 
     private void applyGiveawayEvent() {
