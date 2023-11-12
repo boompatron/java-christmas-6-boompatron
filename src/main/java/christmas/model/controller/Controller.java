@@ -26,17 +26,12 @@ public class Controller {
     public void run() {
         Day reservationDay = ioManager.readArrivalDate();
         Menus menus = ioManager.readMenus();
-        ioManager.printAllMenus(menus);
-        Money totalPrice = Money.of(menus.getTotalPrice());
-        ioManager.printTotalPriceBeforeDiscount(totalPrice);
-
-        giveawayEventService.applyEvent(totalPrice);
-        Money giveawayAmount = giveawayEventService.getGiveawayEventAmount();
+        Money totalPrice = getTotalPrice(menus);
+        Money giveawayAmount = getGiveAwayAmount();
         ioManager.printGiveawayEvent(giveawayEventService.getHistory());
 
         discountEventService.applyDiscount(reservationDay, menus);
         ioManager.printBenefitsDetail(discountEventService.getDiscountEventHistory(), giveawayEventService.getHistory());
-
 
         Money discountAmount = Money.of(discountEventService.getTotalDiscountAmount().getAmount());
         ioManager.printTotalBenefitsAmount(Money.of(discountAmount.getAmount() + giveawayAmount.getAmount()));
@@ -45,5 +40,17 @@ public class Controller {
         ioManager.printTotalPriceAfterDiscount(Money.of(totalPrice.getAmount() - discountAmount.getAmount()));
 
         ioManager.printEventBadge(eventBadge);
+    }
+
+    private Money getTotalPrice(Menus menus) {
+        ioManager.printAllMenus(menus);
+        Money totalPrice = Money.of(menus.getTotalPrice());
+        ioManager.printTotalPriceBeforeDiscount(totalPrice);
+        giveawayEventService.applyEvent(totalPrice);
+        return totalPrice;
+    }
+
+    private Money getGiveAwayAmount() {
+        return giveawayEventService.getGiveawayEventAmount();
     }
 }
