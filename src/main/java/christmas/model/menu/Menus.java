@@ -41,6 +41,10 @@ public class Menus {
         return totalCount;
     }
 
+    public Map<Menu, Integer> getMenus() {
+        return menus;
+    }
+
     private static void validateMenusTotalOverThreshold(Map<Menu, Integer> menus) {
         int totalCount = 0;
         for (Menu menu : menus.keySet()) {
