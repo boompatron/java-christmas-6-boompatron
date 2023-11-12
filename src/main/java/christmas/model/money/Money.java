@@ -18,6 +18,10 @@ public class Money {
         this.amount += amount;
     }
 
+    public int getAmount() {
+        return this.amount;
+    }
+
     public static void validateMoney(int amount) {
         if (amount < 0) {
             throw new IllegalArgumentException();
