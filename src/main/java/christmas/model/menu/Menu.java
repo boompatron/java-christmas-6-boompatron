@@ -37,4 +37,16 @@ public enum Menu {
     public int getPrice() {
         return price;
     }
+
+    public boolean isDrink() {
+        return this.menuType == DRINK;
+    }
+
+    public boolean isMain() {
+        return this.menuType == MAIN;
+    }
+
+    public boolean isDesert() {
+        return this.menuType == DESSERT;
+    }
 }
