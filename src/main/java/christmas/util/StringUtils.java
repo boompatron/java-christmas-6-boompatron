@@ -10,15 +10,16 @@ public class StringUtils {
     private static final DecimalFormat THOUSANDS_FORMAT = new DecimalFormat("###,###");
     private static final String ZERO = "0";
     private static final String MINUS = "-";
+    private static final String CURRENCY_UNIT = "원";
 
     private StringUtils() {
     }
 
     public static String convertIntegerToStringWithComma(int integer) {
         if (integer == 0) {
-            return ZERO;
+            return ZERO + CURRENCY_UNIT;
         }
-        return MINUS + THOUSANDS_FORMAT.format(integer);
+        return THOUSANDS_FORMAT.format(integer) + CURRENCY_UNIT;
     }
 
     public static Map<Menu, Integer> convertStringToMenus(String menuInput, String delimiter) {
