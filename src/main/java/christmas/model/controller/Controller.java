@@ -28,7 +28,7 @@ public class Controller {
         Menus menus = ioManager.readMenus();
         ioManager.printAllMenus(menus);
         Money totalPrice = Money.of(menus.getTotalPrice());
-        ioManager.printTotalPriceAfterDiscount(totalPrice);
+        ioManager.printTotalPriceBeforeDiscount(totalPrice);
 
         giveawayEventService.applyEvent();
         Money giveawayAmount = giveawayEventService.getGiveawayEventAmount();

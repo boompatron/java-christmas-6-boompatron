@@ -50,7 +50,7 @@ public class IOManager {
     public void printAllMenus(Menus menus) {
         for (Menu menu : menus.getMenus().keySet()) {
             sb.append(menu)
-                    .append(OUTPUT_DELIMITER.getValue())
+                    .append(" ")
                     .append(menus.getMenus().get(menu))
                     .append(MENU_UNIT.getValue())
                     .append(OUTPUT_END);
@@ -111,7 +111,7 @@ public class IOManager {
                 .append(" ")
                 .append(MINUS.getValue())
                 .append(convertIntegerToStringWithComma(amount));
-        outputView.printTotalBenefitsAmount(sb.toString());
+        outputView.printBenefitsDetail(sb.toString());
         clearStringBuilder();
     }
 

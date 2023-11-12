@@ -19,11 +19,8 @@ public class OutputView {
         System.out.println(IOConstant.READ_MENU_MESSAGE.getValue());
     }
 
-    public void printShowEventMessage() {
-        System.out.println(IOConstant.SHOW_EVENT_MESSAGE.getValue());
-    }
-
     public void printAllMenus(String menus) {
+        System.out.println(IOConstant.SHOW_EVENT_MESSAGE.getValue() + "\n");
         System.out.println(IOConstant.ORDERED_MENU.getValue());
         System.out.println(menus);
     }

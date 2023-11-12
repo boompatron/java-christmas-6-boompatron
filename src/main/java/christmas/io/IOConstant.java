@@ -9,7 +9,7 @@ public enum IOConstant {
     READ_MENU_MESSAGE("주문하실 메뉴를 메뉴와 개수를 알려주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)"),
     SHOW_EVENT_MESSAGE("12월 26일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!"),
 
-    ORDERED_MENU("\n<주문 메뉴>"),
+    ORDERED_MENU("<주문 메뉴>"),
     AMOUNT_BEFORE_DISCOUNT("<할인 전 총주문 금액>"),
     GIVEAWAY_MENU("\n<증정 메뉴>"),
     BENEFITS_DETAIL("<혜택 내역>"),
