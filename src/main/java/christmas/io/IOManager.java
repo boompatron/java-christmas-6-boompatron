@@ -6,7 +6,6 @@ import static christmas.io.IOConstant.INPUT_DELIMITER;
 import static christmas.io.IOConstant.MENU_UNIT;
 import static christmas.io.IOConstant.MINUS;
 import static christmas.io.IOConstant.NONE;
-import static christmas.io.IOConstant.OUTPUT_DELIMITER;
 import static christmas.util.StringUtils.convertIntegerToStringWithComma;
 
 import christmas.model.event.Day;
@@ -35,16 +34,39 @@ public class IOManager {
 
     public Day readArrivalDate() {
         outputView.printWelcomeMessage();
-        outputView.printReadDateMessage();
-        String userInput = inputView.readArrivalDate();
-        int reservationDay = Integer.parseInt(userInput);
-        return Day.of(reservationDay);
+        boolean isInLoop = true;
+        Day reservationDay = null;
+        while (isInLoop) {
+            try {
+                isInLoop = false;
+                outputView.printReadDateMessage();
+                String userInput = inputView.readArrivalDate();
+                int parsedInteger = Integer.parseInt(userInput);
+                reservationDay = Day.of(parsedInteger);
+            } catch (IllegalArgumentException e) {
+                outputView.printExceptionMessage(e);
+                isInLoop = true;
+            }
+        }
+        return reservationDay;
     }
 
     public Menus readMenus() {
-        outputView.printReadMenuMessage();
-        String userInput = inputView.readMenus();
-        return Menus.fromString(userInput, INPUT_DELIMITER.getValue());
+        boolean isInLoop = true;
+        Menus menus = null;
+        while (isInLoop) {
+            try {
+                isInLoop = false;
+                outputView.printReadMenuMessage();
+                String userInput = inputView.readMenus();
+                menus = Menus.fromString(userInput, INPUT_DELIMITER.getValue());
+            } catch (IllegalArgumentException e) {
+                outputView.printExceptionMessage(e);
+                isInLoop = true;
+            }
+        }
+
+        return menus;
     }
 
     public void printAllMenus(Menus menus) {
