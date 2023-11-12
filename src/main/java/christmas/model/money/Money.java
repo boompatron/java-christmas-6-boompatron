@@ -1,5 +1,7 @@
 package christmas.model.money;
 
+import static christmas.error.ErrorMessage.MONEY_ONLY_POSITIVE;
+
 public class Money {
 
     private int amount;
@@ -24,7 +26,7 @@ public class Money {
 
     public static void validateMoney(int amount) {
         if (amount < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(MONEY_ONLY_POSITIVE.getMessage());
         }
     }
 }

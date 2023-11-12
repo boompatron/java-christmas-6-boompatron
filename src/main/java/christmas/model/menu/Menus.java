@@ -1,5 +1,7 @@
 package christmas.model.menu;
 
+import static christmas.error.ErrorMessage.MENU_OVER_MAX_COUNT;
+import static christmas.error.ErrorMessage.ONLY_DRINKS;
 import static christmas.util.StringUtils.convertStringToMenus;
 
 import java.util.Map;
@@ -52,14 +54,14 @@ public class Menus {
         }
 
         if (totalCount > MENU_MAX_COUNT) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(MENU_OVER_MAX_COUNT.getMessage());
         }
     }
 
     private static void validateMenuOnlyContainsDrinks(Map<Menu, Integer> menus) {
         if (menus.keySet().stream()
                 .allMatch(Menu::isDrink)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ONLY_DRINKS.getMessage());
         }
     }
 }

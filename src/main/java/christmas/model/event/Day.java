@@ -1,5 +1,7 @@
 package christmas.model.event;
 
+import static christmas.error.ErrorMessage.INVALID_DATE;
+
 public class Day {
     private final int day;
 
@@ -18,7 +20,7 @@ public class Day {
 
     public static void validateDay(int day) {
         if (day < 0 || day > 31) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(INVALID_DATE.getMessage());
         }
     }
 }
