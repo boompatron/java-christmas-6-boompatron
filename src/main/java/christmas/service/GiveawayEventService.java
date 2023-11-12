@@ -20,8 +20,8 @@ public class GiveawayEventService {
         return new GiveawayEventService();
     }
 
-    public void applyEvent() {
-        applyGiveawayEvent();
+    public void applyEvent(Money totalAmount) {
+        applyGiveawayEvent(totalAmount.getAmount());
     }
 
     public GiveawayEventHistory getHistory() {
@@ -36,7 +36,9 @@ public class GiveawayEventService {
         return Money.of(amount);
     }
 
-    private void applyGiveawayEvent() {
-        history.addGiveawayEvent(GIVEAWAY_EVENT, EVENT_AMOUNT);
+    private void applyGiveawayEvent(int amount) {
+        if (amount > GIVEAWAY_EVENT.getThreshold()) {
+            history.addGiveawayEvent(GIVEAWAY_EVENT, EVENT_AMOUNT);
+        }
     }
 }

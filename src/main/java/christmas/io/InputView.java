@@ -2,6 +2,7 @@ package christmas.io;
 
 import static christmas.error.ErrorMessage.DELIMITER_IN_START_OR_END;
 import static christmas.error.ErrorMessage.DIGIT_ONLY;
+import static christmas.error.ErrorMessage.INVALID_DATE;
 import static christmas.error.ErrorMessage.INVALID_INPUT;
 import static christmas.error.ErrorMessage.INVALID_ORDER;
 import static christmas.io.IOConstant.INPUT_DELIMITER;
@@ -37,7 +38,7 @@ public class InputView {
 
     private void validateOnlyContainsDigit(String input) {
         if (!input.chars().allMatch(Character::isDigit)) {
-            throw new IllegalArgumentException(DIGIT_ONLY.getMessage());
+            throw new IllegalArgumentException(INVALID_DATE.getMessage());
         }
     }
 

@@ -30,7 +30,7 @@ public class Controller {
         Money totalPrice = Money.of(menus.getTotalPrice());
         ioManager.printTotalPriceBeforeDiscount(totalPrice);
 
-        giveawayEventService.applyEvent();
+        giveawayEventService.applyEvent(totalPrice);
         Money giveawayAmount = giveawayEventService.getGiveawayEventAmount();
         ioManager.printGiveawayEvent(giveawayEventService.getHistory());
 
