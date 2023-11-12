@@ -54,4 +54,8 @@ public class OutputView {
         System.out.println(IOConstant.EVENT_BADGE.getValue());
         System.out.println(eventBadge);
     }
+
+    public void printExceptionMessage(Exception e) {
+        System.out.println(e.getMessage());
+    }
 }
