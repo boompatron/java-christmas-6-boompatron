@@ -1,9 +1,9 @@
 package christmas.service;
 
-import static christmas.model.event.GiveawayEventConstant.GIVEAWAY_EVENT;
+import static christmas.model.event.giveaway.GiveawayEventConstant.GIVEAWAY_EVENT;
 
-import christmas.model.event.GiveawayEventConstant;
-import christmas.model.event.GiveawayEventHistory;
+import christmas.model.event.giveaway.GiveawayEventConstant;
+import christmas.model.event.giveaway.GiveawayEventHistory;
 import christmas.model.money.Money;
 
 public class GiveawayEventService {

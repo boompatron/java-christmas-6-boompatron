@@ -9,11 +9,11 @@ import static christmas.io.IOConstant.NONE;
 import static christmas.util.StringUtils.convertIntegerToStringWithComma;
 
 import christmas.model.event.Day;
-import christmas.model.event.DiscountEventConstant;
-import christmas.model.event.DiscountEventHistory;
-import christmas.model.event.EventBadge;
-import christmas.model.event.GiveawayEventConstant;
-import christmas.model.event.GiveawayEventHistory;
+import christmas.model.event.discount.DiscountEventConstant;
+import christmas.model.event.discount.DiscountEventHistory;
+import christmas.model.event.badge.EventBadge;
+import christmas.model.event.giveaway.GiveawayEventConstant;
+import christmas.model.event.giveaway.GiveawayEventHistory;
 import christmas.model.menu.Menu;
 import christmas.model.menu.Menus;
 import christmas.model.money.Money;

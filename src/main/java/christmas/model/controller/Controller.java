@@ -4,7 +4,7 @@ import static christmas.service.EventBadgeService.getEventBadgeByTotalAmount;
 
 import christmas.io.IOManager;
 import christmas.model.event.Day;
-import christmas.model.event.EventBadge;
+import christmas.model.event.badge.EventBadge;
 import christmas.model.menu.Menus;
 import christmas.model.money.Money;
 import christmas.service.DiscountEventService;

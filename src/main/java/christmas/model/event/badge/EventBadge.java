@@ -1,4 +1,4 @@
-package christmas.model.event;
+package christmas.model.event.badge;
 
 public enum EventBadge {
 

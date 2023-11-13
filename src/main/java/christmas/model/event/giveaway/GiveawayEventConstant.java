@@ -1,4 +1,4 @@
-package christmas.model.event;
+package christmas.model.event.giveaway;
 
 import static christmas.model.menu.Menu.샴페인;
 

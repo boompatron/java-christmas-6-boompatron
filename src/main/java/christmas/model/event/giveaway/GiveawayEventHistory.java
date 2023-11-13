@@ -1,4 +1,4 @@
-package christmas.model.event;
+package christmas.model.event.giveaway;
 
 import java.util.HashMap;
 import java.util.Map;

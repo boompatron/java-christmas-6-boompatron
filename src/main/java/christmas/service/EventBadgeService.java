@@ -1,6 +1,6 @@
 package christmas.service;
 
-import christmas.model.event.EventBadge;
+import christmas.model.event.badge.EventBadge;
 import christmas.model.money.Money;
 
 public class EventBadgeService {

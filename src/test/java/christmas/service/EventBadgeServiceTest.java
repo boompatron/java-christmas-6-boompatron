@@ -1,12 +1,12 @@
 package christmas.service;
 
-import static christmas.model.event.EventBadge.NONE;
-import static christmas.model.event.EventBadge.SANTA;
-import static christmas.model.event.EventBadge.STAR;
-import static christmas.model.event.EventBadge.TREE;
+import static christmas.model.event.badge.EventBadge.NONE;
+import static christmas.model.event.badge.EventBadge.SANTA;
+import static christmas.model.event.badge.EventBadge.STAR;
+import static christmas.model.event.badge.EventBadge.TREE;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import christmas.model.event.EventBadge;
+import christmas.model.event.badge.EventBadge;
 import christmas.model.money.Money;
 import java.util.ArrayList;
 import java.util.List;

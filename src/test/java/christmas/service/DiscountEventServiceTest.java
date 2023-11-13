@@ -1,14 +1,14 @@
 package christmas.service;
 
-import static christmas.model.event.DiscountEventConstant.D_DAY_DISCOUNT_DAILY_DISCOUNT_AMOUNT;
-import static christmas.model.event.DiscountEventConstant.D_DAY_DISCOUNT_INIT_DISCOUNT_AMOUNT;
-import static christmas.model.event.DiscountEventConstant.SPECIAL_DISCOUNT_AMOUNT;
-import static christmas.model.event.DiscountEventConstant.WEEKDAY_DISCOUNT_AMOUNT;
-import static christmas.model.event.DiscountEventConstant.WEEKEND_DISCOUNT_AMOUNT;
+import static christmas.model.event.discount.DiscountEventConstant.D_DAY_DISCOUNT_DAILY_DISCOUNT_AMOUNT;
+import static christmas.model.event.discount.DiscountEventConstant.D_DAY_DISCOUNT_INIT_DISCOUNT_AMOUNT;
+import static christmas.model.event.discount.DiscountEventConstant.SPECIAL_DISCOUNT_AMOUNT;
+import static christmas.model.event.discount.DiscountEventConstant.WEEKDAY_DISCOUNT_AMOUNT;
+import static christmas.model.event.discount.DiscountEventConstant.WEEKEND_DISCOUNT_AMOUNT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import christmas.model.event.Day;
-import christmas.model.event.DiscountEventHistory;
+import christmas.model.event.discount.DiscountEventHistory;
 import christmas.model.menu.Menu;
 import christmas.model.menu.MenuType;
 import christmas.model.menu.Menus;
