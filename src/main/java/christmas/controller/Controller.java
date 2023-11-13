@@ -1,4 +1,4 @@
-package christmas.model.controller;
+package christmas.controller;
 
 import static christmas.service.EventBadgeService.getEventBadgeByTotalAmount;
 

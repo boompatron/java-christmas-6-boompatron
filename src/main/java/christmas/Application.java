@@ -3,7 +3,7 @@ package christmas;
 import christmas.io.IOManager;
 import christmas.io.InputView;
 import christmas.io.OutputView;
-import christmas.model.controller.Controller;
+import christmas.controller.Controller;
 import christmas.service.DiscountEventService;
 import christmas.service.GiveawayEventService;
 
