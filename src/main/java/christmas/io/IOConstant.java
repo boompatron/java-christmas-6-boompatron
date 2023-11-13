@@ -8,6 +8,7 @@ public enum IOConstant {
     MENU_UNIT("개"),
     NONE("없음"),
     MINUS("-"),
+    BLANK(" "),
     ;
 
     private String value;

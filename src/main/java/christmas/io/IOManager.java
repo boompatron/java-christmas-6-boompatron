@@ -1,5 +1,6 @@
 package christmas.io;
 
+import static christmas.io.IOConstant.BLANK;
 import static christmas.io.IOConstant.DISCOUNT_DELIMITER;
 import static christmas.io.IOConstant.INPUT_DELIMITER;
 import static christmas.io.IOConstant.MENU_UNIT;
@@ -72,7 +73,7 @@ public class IOManager {
     public void printAllMenus(Menus menus) {
         for (Menu menu : menus.getMenus().keySet()) {
             sb.append(menu)
-                    .append(" ")
+                    .append(BLANK.getValue())
                     .append(menus.getMenus().get(menu))
                     .append(MENU_UNIT.getValue())
                     .append(OUTPUT_END);
@@ -96,7 +97,7 @@ public class IOManager {
 
         for (GiveawayEventConstant constant : history.getDetails().keySet()) {
             sb.append(constant.getEventMenu())
-                    .append(" ")
+                    .append(BLANK.getValue())
                     .append(history.getDetails().get(constant))
                     .append(MENU_UNIT.getValue())
                     .append(OUTPUT_END);
@@ -118,7 +119,7 @@ public class IOManager {
         for (DiscountEventConstant constant : discountEventHistory.getDetails().keySet()) {
             sb.append(constant.getName())
                     .append(DISCOUNT_DELIMITER.getValue())
-                    .append(" ")
+                    .append(BLANK.getValue())
                     .append(MINUS.getValue())
                     .append(convertIntegerToStringWithComma(discountEventHistory.getDetails().get(constant)))
                     .append(OUTPUT_END);
@@ -130,7 +131,7 @@ public class IOManager {
         }
         sb.append(GIVEAWAY_EVENT.getMessage())
                 .append(DISCOUNT_DELIMITER.getValue())
-                .append(" ")
+                .append(BLANK.getValue())
                 .append(MINUS.getValue())
                 .append(convertIntegerToStringWithComma(amount));
         outputView.printBenefitsDetail(sb.toString());
