@@ -19,7 +19,7 @@ public class Day {
     }
 
     public static void validateDay(int day) {
-        if (day < 0 || day > 31) {
+        if (day <= 0 || day > 31) {
             throw new IllegalArgumentException(INVALID_DATE.getMessage());
         }
     }
