@@ -1,17 +1,17 @@
 package christmas.io;
 
 import static christmas.io.IOConstant.DISCOUNT_DELIMITER;
-import static christmas.io.IOConstant.GIVEAWAY_EVENT;
 import static christmas.io.IOConstant.INPUT_DELIMITER;
 import static christmas.io.IOConstant.MENU_UNIT;
 import static christmas.io.IOConstant.MINUS;
 import static christmas.io.IOConstant.NONE;
+import static christmas.io.OutputMessage.GIVEAWAY_EVENT;
 import static christmas.util.StringUtils.convertIntegerToStringWithComma;
 
 import christmas.model.event.Day;
+import christmas.model.event.badge.EventBadge;
 import christmas.model.event.discount.DiscountEventConstant;
 import christmas.model.event.discount.DiscountEventHistory;
-import christmas.model.event.badge.EventBadge;
 import christmas.model.event.giveaway.GiveawayEventConstant;
 import christmas.model.event.giveaway.GiveawayEventHistory;
 import christmas.model.menu.Menu;
@@ -128,7 +128,7 @@ public class IOManager {
         for (GiveawayEventConstant constant : giveawayEventHistory.getDetails().keySet()) {
             amount += constant.getEventMenu().getPrice() * giveawayEventHistory.getDetails().get(constant);
         }
-        sb.append(GIVEAWAY_EVENT.getValue())
+        sb.append(GIVEAWAY_EVENT.getMessage())
                 .append(DISCOUNT_DELIMITER.getValue())
                 .append(" ")
                 .append(MINUS.getValue())
