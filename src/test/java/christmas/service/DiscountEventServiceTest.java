@@ -72,7 +72,7 @@ class DiscountEventServiceTest {
         Day weekDay = Day.of(weekDayday);
 
         // when
-        discountEventService.applyDiscount(weekDay, menus);
+        discountEventService.applyWeekOrWeekendDiscount(menus, weekDay);
         DiscountEventHistory history = discountEventService.getDiscountEventHistory();
 
         // then
@@ -88,7 +88,7 @@ class DiscountEventServiceTest {
         Day weekDay = Day.of(weekDayday);
 
         // when
-        discountEventService.applyDiscount(weekDay, menus);
+        discountEventService.applyWeekOrWeekendDiscount(menus, weekDay);
         DiscountEventHistory history = discountEventService.getDiscountEventHistory();
         int weekDayDiscountAmount = WEEKDAY_DISCOUNT_AMOUNT.getValue() * mainMenuCount;
 
@@ -105,7 +105,7 @@ class DiscountEventServiceTest {
         Day weekend = Day.of(weekendDay);
 
         // when
-        discountEventService.applyDiscount(weekend, menus);
+        discountEventService.applyWeekOrWeekendDiscount(menus, weekend);
         DiscountEventHistory history = discountEventService.getDiscountEventHistory();
         int weekendDiscountAmount = WEEKEND_DISCOUNT_AMOUNT.getValue() * desertMenuCount;
 
@@ -122,7 +122,7 @@ class DiscountEventServiceTest {
         Day weekend = Day.of(weekendDay);
 
         // when
-        discountEventService.applyDiscount(weekend, menus);
+        discountEventService.applyWeekOrWeekendDiscount(menus, weekend);
         DiscountEventHistory history = discountEventService.getDiscountEventHistory();
         int weekendDiscountAmount = WEEKEND_DISCOUNT_AMOUNT.getValue() * desertMenuCount;
 
@@ -139,7 +139,7 @@ class DiscountEventServiceTest {
         Day specialDay = Day.of(special);
 
         // when
-        discountEventService.applyDiscount(specialDay, menus);
+        discountEventService.applySpecialDiscount(specialDay);
         DiscountEventHistory history = discountEventService.getDiscountEventHistory();
 
         // then
@@ -155,7 +155,7 @@ class DiscountEventServiceTest {
         Day dDay = Day.of(dday);
 
         // when
-        discountEventService.applyDiscount(dDay, menus);
+        discountEventService.applyChristmasDDayDiscount(dDay);
         DiscountEventHistory history = discountEventService.getDiscountEventHistory();
 
         // then
@@ -171,7 +171,7 @@ class DiscountEventServiceTest {
         Day dDay = Day.of(dday);
 
         // when
-        discountEventService.applyDiscount(dDay, menus);
+        discountEventService.applyChristmasDDayDiscount(dDay);
         DiscountEventHistory history = discountEventService.getDiscountEventHistory();
         int discountAmount = D_DAY_DISCOUNT_INIT_DISCOUNT_AMOUNT.getValue()
                 + (dday - 1) * D_DAY_DISCOUNT_DAILY_DISCOUNT_AMOUNT.getValue();

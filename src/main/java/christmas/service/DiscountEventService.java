@@ -34,12 +34,6 @@ public class DiscountEventService {
         return new DiscountEventService();
     }
 
-    public void applyDiscount(Day reservationDay, Menus menus) {
-        applyChristmasDDayDiscount(reservationDay);
-        applyWeekOrWeekendDiscount(menus, reservationDay);
-        applySpecialDiscount(reservationDay);
-    }
-
     public DiscountEventHistory getDiscountEventHistory() {
         return discountEventHistory;
     }
@@ -48,7 +42,7 @@ public class DiscountEventService {
         return totalDiscountAmount;
     }
 
-    private void applyChristmasDDayDiscount(Day reservationDay) {
+    public void applyChristmasDDayDiscount(Day reservationDay) {
         int discountAmount = 0;
         if (reservationDay.getDay() <= CHRISTMAS_DAY) {
             discountAmount = getDDayDiscountAmount(reservationDay.getDay());
@@ -60,7 +54,7 @@ public class DiscountEventService {
         }
     }
 
-    private void applyWeekOrWeekendDiscount(Menus menus, Day reservationDay) {
+    public void applyWeekOrWeekendDiscount(Menus menus, Day reservationDay) {
         int discountAmount = 0;
         Set<MenuType> discountMenuTypes = WEEKDAY_DISCOUNT_MENU_TYPES;
         boolean isWeekend = isDayWeekEnd(reservationDay.getDay());
@@ -79,7 +73,7 @@ public class DiscountEventService {
         }
     }
 
-    private void applySpecialDiscount(Day reservationDay) {
+    public void applySpecialDiscount(Day reservationDay) {
         int discountAmount = 0;
         if (isStarOnDay(reservationDay.getDay())) {
             discountAmount = SPECIAL_DISCOUNT_AMOUNT.getValue();
